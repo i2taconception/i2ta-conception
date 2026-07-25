@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://i2taconception.github.io/i2ta-conception/sitemap.xml
+Sitemap: https://i2ta-conception.fr/sitemap.xml
