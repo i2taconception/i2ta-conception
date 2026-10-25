@@ -62,7 +62,9 @@
 <script data-goatcounter="https://i2ta-conception.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/fonts/fonts.css" />
+<style>@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:300 700;font-display:swap;src:url("/fonts/space-grotesk-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations")}</style>
 <style>
 /* ============ TOKENS ============ */
 :root {
@@ -271,7 +273,7 @@ nav {
   animation: marquee 28s linear infinite;
   font-family: var(--mono); font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.12em;
 }
-.marquee-track span:nth-child(odd) { color: var(--accent-dim); }
+.marquee-track span:nth-child(odd) { color: var(--accent); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ============ SECTIONS ============ */
@@ -442,7 +444,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-family: var(--display); font-weight: 600; color: var(--accent-bright); font-size: 1.1rem;
 }
-.trust-point h4 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
+.trust-point h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
 .trust-point p { font-size: 0.88rem; color: var(--ink-dim); }
 
 .testimonial-placeholder {
@@ -509,7 +511,7 @@ footer {
   border-top: 1px solid var(--line-soft); padding: 2.2rem 5%;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
 }
-.footer-logo img { height: 90px; opacity: 0.7; }
+.footer-logo img { height: 90px; width: auto; opacity: 0.7; }
 footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); letter-spacing: 0.04em; }
 
 /* ============ RESPONSIVE ============ */
@@ -555,7 +557,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <nav id="nav">
-  <div class="nav-logo"><a href="/"><img src="/img/i2ta-conception.webp" alt="I2TA Conception" /></a></div>
+  <div class="nav-logo"><a href="/"><img width="220" height="220" src="/img/i2ta-conception-220.webp" alt="I2TA Conception" /></a></div>
   <ul class="nav-links">
     <li><a href="/#services">Prestations</a></li>
     <li><a href="/#work">Réalisations</a></li>
@@ -678,19 +680,19 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
   </div>
   <div class="work-grid">
     <article class="work-card reveal">
-      <div class="work-media"><img src="/img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Plan d'ensemble Torque Slipping Jig avec nomenclature" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1027" src="/img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Plan d'ensemble Torque Slipping Jig avec nomenclature" loading="lazy" /></div>
       <div class="work-info"><h3>Torque Slipping Jig — ensemble</h3><p>Vue éclatée avec nomenclature complète, coupe de fonctionnement.</p></div>
     </article>
     <article class="work-card reveal">
-      <div class="work-media"><img src="/img/plan-cote-frame-base.webp" alt="Plan coté Frame Base" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="980" src="/img/plan-cote-frame-base.webp" alt="Plan coté Frame Base" loading="lazy" /></div>
       <div class="work-info"><h3>Frame Base — plan coté</h3><p>Pièce de bâti, perçages positionnés, traitement brunissage.</p></div>
     </article>
     <article class="work-card reveal">
-      <div class="work-media"><img src="/img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Plan coté Main Frame avec coupe A-A" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="984" src="/img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Plan coté Main Frame avec coupe A-A" loading="lazy" /></div>
       <div class="work-info"><h3>Main Frame — plan coté</h3><p>Logement d'arbre, coupe A-A, tolérances de perçage serrées.</p></div>
     </article>
     <article class="work-card reveal">
-      <div class="work-media"><img src="/img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension et train avant de vélo tricycle" loading="lazy" /></div>
+      <div class="work-media"><img width="1217" height="1010" src="/img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension et train avant de vélo tricycle" loading="lazy" /></div>
       <div class="work-info"><h3>Train avant — vélo tricycle</h3><p>Suspension et mécanisme multi-liaisons, triangulation, articulations rotulées.</p></div>
     </article>
   </div>
@@ -721,7 +723,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 
 
 <footer>
-  <div class="footer-logo"><img src="/img/i2ta-conception.webp" alt="I2TA Conception" /></div>
+  <div class="footer-logo"><img width="220" height="220" src="/img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
   <p>© 2026 I2TA Conception — Adrien Tomasini — Ingénierie Mécanique — Marseille — SIREN 978 741 023 — <a href="/mentions-legales/" style="color:inherit">Mentions légales</a></p>
 </footer>
 

@@ -56,7 +56,9 @@
 <script data-goatcounter="https://i2ta-conception.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/fonts/fonts.css" />
+<style>@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:300 700;font-display:swap;src:url("/fonts/space-grotesk-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations")}</style>
 <style>
 /* ============ TOKENS ============ */
 :root {
@@ -265,7 +267,7 @@ nav {
   animation: marquee 28s linear infinite;
   font-family: var(--mono); font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.12em;
 }
-.marquee-track span:nth-child(odd) { color: var(--accent-dim); }
+.marquee-track span:nth-child(odd) { color: var(--accent); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ============ SECTIONS ============ */
@@ -436,7 +438,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-family: var(--display); font-weight: 600; color: var(--accent-bright); font-size: 1.1rem;
 }
-.trust-point h4 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
+.trust-point h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
 .trust-point p { font-size: 0.88rem; color: var(--ink-dim); }
 
 .testimonial-placeholder {
@@ -503,7 +505,7 @@ footer {
   border-top: 1px solid var(--line-soft); padding: 2.2rem 5%;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
 }
-.footer-logo img { height: 90px; opacity: 0.7; }
+.footer-logo img { height: 90px; width: auto; opacity: 0.7; }
 footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); letter-spacing: 0.04em; }
 
 /* ============ RESPONSIVE ============ */
@@ -528,7 +530,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <nav id="nav">
-  <div class="nav-logo"><img src="../img/i2ta-conception.webp" alt="I2TA Conception" /></div>
+  <div class="nav-logo"><img width="220" height="220" src="../img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Portfolio</a></li>
@@ -678,7 +680,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
   <div class="work-grid" id="workGrid">
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/agitateur-de-cuve-inox-3-cadres-tubulaires-moto-reducteur.webp" alt="Stainless steel tank agitator with three tubular frames, gearmotor on top, bottom guide" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="../img/agitateur-de-cuve-inox-3-cadres-tubulaires-moto-reducteur.webp" alt="Stainless steel tank agitator with three tubular frames, gearmotor on top, bottom guide" loading="lazy" /></div>
       <div class="work-info">
         <h3>Stainless tank agitator — shaft coupling and guide</h3>
         <p>3 m diameter tank, three tubular mixing frames offset by 120° (specified by the client), 19 rpm gearmotor. My scope: shaft-to-gearbox coupling, motor frame, radial bottom guide, 304L stainless parts and manufacturing drawings.</p>
@@ -686,7 +688,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="../img/retro-ingenierie-outillage-machine-releve-pied-a-coulisse-modele-solidworks.webp" alt="Machine tooling disassembled and measured with calipers, then rebuilt as a SolidWorks assembly" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="../img/retro-ingenierie-outillage-machine-releve-pied-a-coulisse-modele-solidworks.webp" alt="Machine tooling disassembled and measured with calipers, then rebuilt as a SolidWorks assembly" loading="lazy" /></div>
       <div class="work-info">
         <h3>Machine tooling with no drawing — from measurement to drawing</h3>
         <p>Parts disassembled, dimensions taken with calipers, then the assembly rebuilt in SolidWorks. Deliverables: 3D model and dimensioned drawing, so the tooling can be machined again without the original drawing.</p>
@@ -694,7 +696,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="../img/retro-ingenierie-d-une-piece-mecanique-maillage-brut-de.webp" alt="Reverse engineering of a mechanical part: raw 3D scan mesh on the left, rebuilt surfaced STEP model on the right" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="../img/retro-ingenierie-d-une-piece-mecanique-maillage-brut-de.webp" alt="Reverse engineering of a mechanical part: raw 3D scan mesh on the left, rebuilt surfaced STEP model on the right" loading="lazy" /></div>
       <div class="work-info">
         <h3>Reverse engineering — 3D scan to surfaces</h3>
         <p>Raw scan mesh with torn edges and visible facets (left), rebuilt as continuous surfaces and closed into a STEP solid (right). Clean geometry, editable in CAD and ready for manufacturing.</p>
@@ -702,7 +704,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="../img/conversion-d-un-fichier-stl-maille-en-modele-step-solid.webp" alt="Converting a triangulated STL mesh into a solid STEP model suitable for CNC machining" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="../img/conversion-d-un-fichier-stl-maille-en-modele-step-solid.webp" alt="Converting a triangulated STL mesh into a solid STEP model suitable for CNC machining" loading="lazy" /></div>
       <div class="work-info">
         <h3>STL → STEP — mesh rebuilt as a solid</h3>
         <p>Client-supplied triangulated STL (left) rebuilt as a parametric solid (right): edges and fillets restored, a file the machinist can open and cut straight away.</p>
@@ -710,7 +712,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="struct">
-      <div class="work-media"><img src="../img/escalier-telescopique-mecano-soude-pour-scene.webp" alt="Welded telescopic stage staircase" loading="lazy" /></div>
+      <div class="work-media"><img width="1099" height="1083" src="../img/escalier-telescopique-mecano-soude-pour-scene.webp" alt="Welded telescopic stage staircase" loading="lazy" /></div>
       <div class="work-info">
         <h3>Telescopic stage staircase</h3>
         <p>Welded structure for stage access, assembled profiles, integrated guardrails.</p>
@@ -718,7 +720,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="struct">
-      <div class="work-media"><img src="../img/tribune-complete-avec-habillage.webp" alt="Complete grandstand with cladding" loading="lazy" /></div>
+      <div class="work-media"><img width="1230" height="748" src="../img/tribune-complete-avec-habillage.webp" alt="Complete grandstand with cladding" loading="lazy" /></div>
       <div class="work-info">
         <h3>Complete grandstand</h3>
         <p>Tiered seating assembly + load-bearing structure + perimeter cladding.</p>
@@ -726,7 +728,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension and front axle of a tricycle" loading="lazy" /></div>
+      <div class="work-media"><img width="1217" height="1010" src="../img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension and front axle of a tricycle" loading="lazy" /></div>
       <div class="work-info">
         <h3>Front axle — cargo tricycle</h3>
         <p>Suspension and multi-link mechanism, triangulation, ball-joint articulations.</p>
@@ -734,7 +736,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/potence-de-velo-enfant-reglable.webp" alt="Adjustable child bike stem" loading="lazy" /></div>
+      <div class="work-media"><img width="957" height="1043" src="../img/potence-de-velo-enfant-reglable.webp" alt="Adjustable child bike stem" loading="lazy" /></div>
       <div class="work-info">
         <h3>Adjustable child bike stem</h3>
         <p>Split-collar clamping, safety pin, multi-axis adjustment.</p>
@@ -742,7 +744,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/integration-moteur-electrique-karting-enfant.webp" alt="Electric motor integration, kids' go-kart" loading="lazy" /></div>
+      <div class="work-media"><img width="1384" height="998" src="../img/integration-moteur-electrique-karting-enfant.webp" alt="Electric motor integration, kids' go-kart" loading="lazy" /></div>
       <div class="work-info">
         <h3>Motor integration — kids' go-kart</h3>
         <p>Folded sheet-metal mount, belt-and-pulley shaft drive.</p>
@@ -750,7 +752,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="calc">
-      <div class="work-media"><img src="../img/etude-fea-von-mises-sur-structure-pliee.webp" alt="Von Mises FEA study on a folded structure" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="782" src="../img/etude-fea-von-mises-sur-structure-pliee.webp" alt="Von Mises FEA study on a folded structure" loading="lazy" /></div>
       <div class="work-info">
         <h3>FEA validation — von Mises</h3>
         <p>Structural strength verification before manufacturing, margin to yield strength.</p>
@@ -758,7 +760,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Torque Slipping Jig assembly drawing with BOM" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1027" src="../img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Torque Slipping Jig assembly drawing with BOM" loading="lazy" /></div>
       <div class="work-info">
         <h3>Torque Slipping Jig — assembly</h3>
         <p>Exploded view with full bill of materials, functional cross-section.</p>
@@ -766,7 +768,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="../img/plan-cote-frame-base.webp" alt="Frame Base toleranced drawing" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="980" src="../img/plan-cote-frame-base.webp" alt="Frame Base toleranced drawing" loading="lazy" /></div>
       <div class="work-info">
         <h3>Frame Base — toleranced drawing</h3>
         <p>Base frame part, positioned drilling, black oxide finish.</p>
@@ -774,7 +776,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="../img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Main Frame toleranced drawing with section A-A" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="984" src="../img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Main Frame toleranced drawing with section A-A" loading="lazy" /></div>
       <div class="work-info">
         <h3>Main Frame — toleranced drawing</h3>
         <p>Shaft housing, section A-A, tight drilling tolerances.</p>
@@ -782,7 +784,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="../img/plan-d-ensemble-mandrin-de-controle-ecr.webp" alt="ECR inspection mandrel assembly drawing" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="980" src="../img/plan-d-ensemble-mandrin-de-controle-ecr.webp" alt="ECR inspection mandrel assembly drawing" loading="lazy" /></div>
       <div class="work-info">
         <h3>ECR inspection mandrel</h3>
         <p>Worm-gear inspection tooling, full cross-section, 19 referenced components.</p>
@@ -790,7 +792,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="../img/plan-cote-tube-coulisse-tolerances-h7.webp" alt="Sliding tube toleranced drawing, H7 tolerances" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="977" src="../img/plan-cote-tube-coulisse-tolerances-h7.webp" alt="Sliding tube toleranced drawing, H7 tolerances" loading="lazy" /></div>
       <div class="work-info">
         <h3>Sliding tube — Ø79 H7</h3>
         <p>Quench-and-temper 58-60 HRC, H7 tolerances, coaxiality control.</p>
@@ -798,7 +800,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="../img/plan-cote-piece-nitruree-avec-specifications-de-surface.webp" alt="Nitrided part toleranced drawing with surface specs" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1007" src="../img/plan-cote-piece-nitruree-avec-specifications-de-surface.webp" alt="Nitrided part toleranced drawing with surface specs" loading="lazy" /></div>
       <div class="work-info">
         <h3>CMP well — nitrided part</h3>
         <p>Nitriding HV&gt;700, Ra 0.8, g6/H7 fit tolerances.</p>
@@ -806,7 +808,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="../img/plan-cote-centreur-pignon-outillage-de-presse.webp" alt="Gear centering tool toleranced drawing, press tooling" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="975" src="../img/plan-cote-centreur-pignon-outillage-de-presse.webp" alt="Gear centering tool toleranced drawing, press tooling" loading="lazy" /></div>
       <div class="work-info">
         <h3>Gear centering tool</h3>
         <p>Press inspection tooling, hardened 58-60 HRC.</p>
@@ -814,7 +816,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="calc">
-      <div class="work-media"><img src="../img/coupe-d-un-atomiseur-de-cigarette-electronique.webp" alt="Cross-section of an e-cigarette atomizer" loading="lazy" /></div>
+      <div class="work-media"><img width="658" height="1045" src="../img/coupe-d-un-atomiseur-de-cigarette-electronique.webp" alt="Cross-section of an e-cigarette atomizer" loading="lazy" /></div>
       <div class="work-info">
         <h3>Atomizer — e-cigarette</h3>
         <p>Product development, visualization of operating clearances and internal joints.</p>
@@ -822,7 +824,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="render">
-      <div class="work-media"><img src="../img/rendu-keyshot-d-un-abreuvoir-a-poule-en-inox.webp" alt="Keyshot render of a stainless steel chicken waterer" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1751" src="../img/rendu-keyshot-d-un-abreuvoir-a-poule-en-inox.webp" alt="Keyshot render of a stainless steel chicken waterer" loading="lazy" /></div>
       <div class="work-info">
         <h3>Chicken waterer — Keyshot render</h3>
         <p>Photorealistic visualization for product presentation, brushed stainless finish.</p>
@@ -845,7 +847,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
   <div class="trust-layout">
     <div class="trust-visual reveal">
       <div class="trust-portrait">
-        <img src="../img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, founding engineer of I2TA Conception" loading="lazy" />
+        <img width="450" height="730" src="../img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, founding engineer of I2TA Conception" loading="lazy" />
         <div class="trust-portrait-bracket tl"></div>
         <div class="trust-portrait-bracket bl"></div>
         <div class="trust-portrait-tag">
@@ -868,21 +870,21 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
         <div class="trust-point reveal">
           <div class="trust-point-mark">10</div>
           <div>
-            <h4>Years in the automotive industry</h4>
+            <h3>Years in the automotive industry</h3>
             <p>Design and production follow-up in real conditions, not just in a design office.</p>
           </div>
         </div>
         <div class="trust-point reveal">
           <div class="trust-point-mark">⚙</div>
           <div>
-            <h4>Rare dual expertise</h4>
+            <h3>Rare dual expertise</h3>
             <p>I design AND I know how to machine. I spot upfront the drawings that will cause trouble on the shop floor.</p>
           </div>
         </div>
         <div class="trust-point reveal">
           <div class="trust-point-mark">⏱</div>
           <div>
-            <h4>Fast response guaranteed</h4>
+            <h3>Fast response guaranteed</h3>
             <p>No large design office: a single point of contact, replies within 24h.</p>
           </div>
         </div>
@@ -1023,7 +1025,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 </section>
 
 <footer>
-  <div class="footer-logo"><img src="../img/i2ta-conception.webp" alt="I2TA Conception" /></div>
+  <div class="footer-logo"><img width="220" height="220" src="../img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
   <p>© 2026 I2TA Conception — Adrien Tomasini — Mechanical Engineering — Marseille, France — SIREN 978 741 023 — <a href="/en/legal-notice/" style="color:inherit">Legal notice</a></p>
 </footer>
 

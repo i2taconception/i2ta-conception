@@ -69,7 +69,9 @@
 <script data-goatcounter="https://i2ta-conception.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="/fonts/fonts.css" />
+<style>@font-face{font-family:"Space Grotesk";font-style:normal;font-weight:300 700;font-display:swap;src:url("/fonts/space-grotesk-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url("/fonts/inter-latin-wght-normal.woff2") format("woff2-variations")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:100 800;font-display:swap;src:url("/fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2-variations")}</style>
 <style>
 /* ============ TOKENS ============ */
 :root {
@@ -278,7 +280,7 @@ nav {
   animation: marquee 28s linear infinite;
   font-family: var(--mono); font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.12em;
 }
-.marquee-track span:nth-child(odd) { color: var(--accent-dim); }
+.marquee-track span:nth-child(odd) { color: var(--accent); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ============ SECTIONS ============ */
@@ -449,7 +451,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-family: var(--display); font-weight: 600; color: var(--accent-bright); font-size: 1.1rem;
 }
-.trust-point h4 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
+.trust-point h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--ink); }
 .trust-point p { font-size: 0.88rem; color: var(--ink-dim); }
 
 .testimonial-placeholder {
@@ -516,7 +518,7 @@ footer {
   border-top: 1px solid var(--line-soft); padding: 2.2rem 5%;
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
 }
-.footer-logo img { height: 90px; opacity: 0.7; }
+.footer-logo img { height: 90px; width: auto; opacity: 0.7; }
 footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); letter-spacing: 0.04em; }
 
 /* ============ RESPONSIVE ============ */
@@ -541,7 +543,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 <div class="cursor-glow" id="cursorGlow"></div>
 
 <nav id="nav">
-  <div class="nav-logo"><img src="img/i2ta-conception.webp" alt="I2TA Conception" /></div>
+  <div class="nav-logo"><img width="220" height="220" src="img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
   <ul class="nav-links">
     <li><a href="#services">Prestations</a></li>
     <li><a href="#work">Réalisations</a></li>
@@ -693,7 +695,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
   <div class="work-grid" id="workGrid">
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/agitateur-de-cuve-inox-3-cadres-tubulaires-moto-reducteur.webp" alt="Agitateur de cuve inox à trois cadres tubulaires, moto-réducteur en tête, guidage en bas de cuve" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="img/agitateur-de-cuve-inox-3-cadres-tubulaires-moto-reducteur.webp" alt="Agitateur de cuve inox à trois cadres tubulaires, moto-réducteur en tête, guidage en bas de cuve" loading="lazy" /></div>
       <div class="work-info">
         <h3>Agitateur de cuve inox — liaisons et guidage</h3>
         <p>Cuve Ø3 m, trois cadres de brassage tubulaires décalés de 120° (définis par le client), moto-réducteur 19 tr/min. Mon périmètre : liaison arbre / réducteur, châssis moteur, guidage radial en bas de cuve, pièces inox 304L et mises en plan pour fabrication.</p>
@@ -701,7 +703,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="img/retro-ingenierie-outillage-machine-releve-pied-a-coulisse-modele-solidworks.webp" alt="Outillage de machine démonté et relevé au pied à coulisse, puis modélisé en assemblage SolidWorks" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="img/retro-ingenierie-outillage-machine-releve-pied-a-coulisse-modele-solidworks.webp" alt="Outillage de machine démonté et relevé au pied à coulisse, puis modélisé en assemblage SolidWorks" loading="lazy" /></div>
       <div class="work-info">
         <h3>Outillage machine sans plan — du relevé à la mise en plan</h3>
         <p>Pièces démontées, cotes relevées au pied à coulisse, puis assemblage reconstruit sous SolidWorks. Livrables : modèle 3D et mise en plan cotée, pour refabriquer l'outillage en usinage sans plan d'origine.</p>
@@ -709,7 +711,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="img/retro-ingenierie-d-une-piece-mecanique-maillage-brut-de.webp" alt="Rétro-ingénierie d'une pièce mécanique : maillage brut de numérisation 3D à gauche, modèle STEP surfacique reconstruit à droite" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="img/retro-ingenierie-d-une-piece-mecanique-maillage-brut-de.webp" alt="Rétro-ingénierie d'une pièce mécanique : maillage brut de numérisation 3D à gauche, modèle STEP surfacique reconstruit à droite" loading="lazy" /></div>
       <div class="work-info">
         <h3>Rétro-ingénierie — du scan 3D aux surfaces</h3>
         <p>Maillage de numérisation brut, arêtes déchirées et facettes apparentes (gauche), repris en surfaces continues puis fermé en volume STEP (droite). Géométrie propre, modifiable en CAO et exploitable en fabrication.</p>
@@ -717,7 +719,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="retro">
-      <div class="work-media"><img src="img/conversion-d-un-fichier-stl-maille-en-modele-step-solid.webp" alt="Conversion d'un fichier STL maillé en modèle STEP solide exploitable pour l'usinage CNC" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1050" src="img/conversion-d-un-fichier-stl-maille-en-modele-step-solid.webp" alt="Conversion d'un fichier STL maillé en modèle STEP solide exploitable pour l'usinage CNC" loading="lazy" /></div>
       <div class="work-info">
         <h3>STL → STEP — maillage converti en solide</h3>
         <p>Fichier STL triangulé fourni par le client (gauche) reconstruit en solide paramétrique (droite) : arêtes et congés rétablis, fichier que l'usineur ouvre et usine directement.</p>
@@ -725,7 +727,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="struct">
-      <div class="work-media"><img src="img/escalier-telescopique-mecano-soude-pour-scene.webp" alt="Escalier télescopique mécano-soudé pour scène" loading="lazy" /></div>
+      <div class="work-media"><img width="1099" height="1083" src="img/escalier-telescopique-mecano-soude-pour-scene.webp" alt="Escalier télescopique mécano-soudé pour scène" loading="lazy" /></div>
       <div class="work-info">
         <h3>Escalier de scène télescopique</h3>
         <p>Structure mécano-soudée pour accès stage, profilés assemblés, garde-corps intégrés.</p>
@@ -733,7 +735,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="struct">
-      <div class="work-media"><img src="img/tribune-complete-avec-habillage.webp" alt="Tribune complète avec habillage" loading="lazy" /></div>
+      <div class="work-media"><img width="1230" height="748" src="img/tribune-complete-avec-habillage.webp" alt="Tribune complète avec habillage" loading="lazy" /></div>
       <div class="work-info">
         <h3>Tribune complète</h3>
         <p>Ensemble gradins + structure porteuse + habillage périphérique.</p>
@@ -741,7 +743,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension et train avant de vélo tricycle" loading="lazy" /></div>
+      <div class="work-media"><img width="1217" height="1010" src="img/suspension-et-train-avant-de-velo-tricycle.webp" alt="Suspension et train avant de vélo tricycle" loading="lazy" /></div>
       <div class="work-info">
         <h3>Train avant — vélo tricycle</h3>
         <p>Suspension et mécanisme multi-liaisons, triangulation, articulations rotulées.</p>
@@ -749,7 +751,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/potence-de-velo-enfant-reglable.webp" alt="Potence de vélo enfant réglable" loading="lazy" /></div>
+      <div class="work-media"><img width="957" height="1043" src="img/potence-de-velo-enfant-reglable.webp" alt="Potence de vélo enfant réglable" loading="lazy" /></div>
       <div class="work-info">
         <h3>Potence de vélo enfant réglable</h3>
         <p>Serrage par collier fendu, goupille de sécurité, ajustement multi-axes.</p>
@@ -757,7 +759,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/integration-moteur-electrique-karting-enfant.webp" alt="Intégration moteur électrique karting enfant" loading="lazy" /></div>
+      <div class="work-media"><img width="1384" height="998" src="img/integration-moteur-electrique-karting-enfant.webp" alt="Intégration moteur électrique karting enfant" loading="lazy" /></div>
       <div class="work-info">
         <h3>Intégration moteur — karting enfant</h3>
         <p>Support tôlerie pliée, entraînement par poulie-courroie sur arbre.</p>
@@ -765,7 +767,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="calc">
-      <div class="work-media"><img src="img/etude-fea-von-mises-sur-structure-pliee.webp" alt="Étude FEA von Mises sur structure pliée" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="782" src="img/etude-fea-von-mises-sur-structure-pliee.webp" alt="Étude FEA von Mises sur structure pliée" loading="lazy" /></div>
       <div class="work-info">
         <h3>Validation FEA — von Mises</h3>
         <p>Vérification de tenue mécanique avant fabrication, marge à la limite d'élasticité.</p>
@@ -773,7 +775,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Plan d'ensemble Torque Slipping Jig avec nomenclature" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1027" src="img/plan-d-ensemble-torque-slipping-jig-avec-nomenclature.webp" alt="Plan d'ensemble Torque Slipping Jig avec nomenclature" loading="lazy" /></div>
       <div class="work-info">
         <h3>Torque Slipping Jig — ensemble</h3>
         <p>Vue éclatée avec nomenclature complète, coupe de fonctionnement.</p>
@@ -781,7 +783,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="img/plan-cote-frame-base.webp" alt="Plan coté Frame Base" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="980" src="img/plan-cote-frame-base.webp" alt="Plan coté Frame Base" loading="lazy" /></div>
       <div class="work-info">
         <h3>Frame Base — plan coté</h3>
         <p>Pièce de bâti, perçages positionnés, traitement brunissage.</p>
@@ -789,7 +791,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Plan coté Main Frame avec coupe A-A" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="984" src="img/plan-cote-main-frame-avec-coupe-a-a.webp" alt="Plan coté Main Frame avec coupe A-A" loading="lazy" /></div>
       <div class="work-info">
         <h3>Main Frame — plan coté</h3>
         <p>Logement d'arbre, coupe A-A, tolérances de perçage serrées.</p>
@@ -797,7 +799,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="assy">
-      <div class="work-media"><img src="img/plan-d-ensemble-mandrin-de-controle-ecr.webp" alt="Plan d'ensemble mandrin de contrôle ECR" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="980" src="img/plan-d-ensemble-mandrin-de-controle-ecr.webp" alt="Plan d'ensemble mandrin de contrôle ECR" loading="lazy" /></div>
       <div class="work-info">
         <h3>Mandrin de contrôle ECR</h3>
         <p>Outillage de contrôle roue/vis, coupe complète, 19 composants référencés.</p>
@@ -805,7 +807,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="img/plan-cote-tube-coulisse-tolerances-h7.webp" alt="Plan coté Tube coulisse, tolérances H7" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="977" src="img/plan-cote-tube-coulisse-tolerances-h7.webp" alt="Plan coté Tube coulisse, tolérances H7" loading="lazy" /></div>
       <div class="work-info">
         <h3>Tube coulisse — Ø79 H7</h3>
         <p>Trempe-revenu 58-60 HRC, tolérances H7, contrôle de coaxialité.</p>
@@ -813,7 +815,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="img/plan-cote-piece-nitruree-avec-specifications-de-surface.webp" alt="Plan coté pièce nitrurée avec spécifications de surface" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1007" src="img/plan-cote-piece-nitruree-avec-specifications-de-surface.webp" alt="Plan coté pièce nitrurée avec spécifications de surface" loading="lazy" /></div>
       <div class="work-info">
         <h3>Puits CMP — pièce nitrurée</h3>
         <p>Nitruration HV&gt;700, Ra 0.8, tolérances g6/H7 sur ajustements.</p>
@@ -821,7 +823,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="plan">
-      <div class="work-media"><img src="img/plan-cote-centreur-pignon-outillage-de-presse.webp" alt="Plan coté centreur pignon, outillage de presse" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="975" src="img/plan-cote-centreur-pignon-outillage-de-presse.webp" alt="Plan coté centreur pignon, outillage de presse" loading="lazy" /></div>
       <div class="work-info">
         <h3>Centreur pignon — outillage</h3>
         <p>Outillage de contrôle de presse, trempé 58-60 HRC.</p>
@@ -829,7 +831,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="calc">
-      <div class="work-media"><img src="img/coupe-d-un-atomiseur-de-cigarette-electronique.webp" alt="Coupe d'un atomiseur de cigarette électronique" loading="lazy" /></div>
+      <div class="work-media"><img width="658" height="1045" src="img/coupe-d-un-atomiseur-de-cigarette-electronique.webp" alt="Coupe d'un atomiseur de cigarette électronique" loading="lazy" /></div>
       <div class="work-info">
         <h3>Atomiseur — cigarette électronique</h3>
         <p>Développement produit, visualisation des jeux de fonctionnement et liaisons internes.</p>
@@ -837,7 +839,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
     </article>
 
     <article class="work-card reveal" data-cat="render">
-      <div class="work-media"><img src="img/rendu-keyshot-d-un-abreuvoir-a-poule-en-inox.webp" alt="Rendu Keyshot d'un abreuvoir à poule en inox" loading="lazy" /></div>
+      <div class="work-media"><img width="1400" height="1751" src="img/rendu-keyshot-d-un-abreuvoir-a-poule-en-inox.webp" alt="Rendu Keyshot d'un abreuvoir à poule en inox" loading="lazy" /></div>
       <div class="work-info">
         <h3>Abreuvoir à poule — rendu Keyshot</h3>
         <p>Visualisation photoréaliste pour présentation produit, finition inox brossé.</p>
@@ -860,7 +862,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
   <div class="trust-layout">
     <div class="trust-visual reveal">
       <div class="trust-portrait">
-        <img src="img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, ingénieur fondateur d'I2TA Conception" loading="lazy" />
+        <img width="450" height="730" src="img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, ingénieur fondateur d'I2TA Conception" loading="lazy" />
         <div class="trust-portrait-bracket tl"></div>
         <div class="trust-portrait-bracket bl"></div>
         <div class="trust-portrait-tag">
@@ -883,21 +885,21 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
         <div class="trust-point reveal">
           <div class="trust-point-mark">10</div>
           <div>
-            <h4>Ans en industrie automobile</h4>
+            <h3>Ans en industrie automobile</h3>
             <p>Conception et suivi de production en conditions réelles, pas seulement en bureau d'études.</p>
           </div>
         </div>
         <div class="trust-point reveal">
           <div class="trust-point-mark">⚙</div>
           <div>
-            <h4>Double compétence rare</h4>
+            <h3>Double compétence rare</h3>
             <p>Je conçois ET je sais usiner. Je vois en amont les plans qui posent problème en atelier.</p>
           </div>
         </div>
         <div class="trust-point reveal">
           <div class="trust-point-mark">⏱</div>
           <div>
-            <h4>Réponse rapide garantie</h4>
+            <h3>Réponse rapide garantie</h3>
             <p>Pas de grand bureau d'études : un seul interlocuteur, des retours sous 24h.</p>
           </div>
         </div>
@@ -1046,7 +1048,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 </section>
 
 <footer>
-  <div class="footer-logo"><img src="img/i2ta-conception.webp" alt="I2TA Conception" /></div>
+  <div class="footer-logo"><img width="220" height="220" src="img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
   <p>© 2026 I2TA Conception — Adrien Tomasini — Ingénierie Mécanique — Marseille — SIREN 978 741 023 — <a href="/mentions-legales/" style="color:inherit">Mentions légales</a></p>
 </footer>
 
