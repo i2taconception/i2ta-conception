@@ -45,7 +45,7 @@
   "address": { "@type": "PostalAddress", "addressLocality": "Marseille", "addressRegion": "PACA", "addressCountry": "FR" },
   "email": "i2ta.conception@gmail.com",
   "url": "https://i2ta-conception.fr/",
-  "knowsAbout": ["Ingénierie mécanique", "SolidWorks", "Conception 3D", "Tolérancement GD&T", "Outillages industriels", "Usinage CNC", "Impression 3D", "Rendu 3D Keyshot", "Rétro-ingénierie", "Rétro-conception", "Conversion STL vers STEP", "Numérisation 3D", "Scan 3D de pièce mécanique", "Traitement de nuage de points"],
+  "knowsAbout": ["Ingénierie mécanique", "SolidWorks", "Conception 3D", "Tolérancement GD&T", "Outillages industriels", "Usinage CNC", "Conception pour l'impression 3D", "Rendu 3D Keyshot", "Rétro-ingénierie", "Rétro-conception", "Conversion STL vers STEP", "Numérisation 3D", "Scan 3D de pièce mécanique", "Traitement de nuage de points"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Prestations d'ingénierie mécanique",
@@ -64,8 +64,8 @@
 <!-- GoatCounter : analytics léger, gratuit, sans cookie -->
 <script data-goatcounter="https://i2ta-conception.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/fonts/fonts.css" />
 <style>
 /* ============ TOKENS ============ */
 :root {
@@ -928,8 +928,8 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
       <div class="expertise-icon">
         <svg viewBox="0 0 32 32" fill="none"><path d="M16 4v8M16 4l7 4M16 4L9 8M9 8v8l7 4 7-4V8M9 24l7 4 7-4M16 16v12" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
       </div>
-      <h3>Impression 3D</h3>
-      <p>Prototypage rapide, pièces de série courte ou gabarits non critiques — je maîtrise l'impression 3D comme complément à l'usinage, pour aller vite quand la pièce le permet et garder l'usinage pour ce qui l'exige vraiment.</p>
+      <h3>Conception pour l'impression 3D</h3>
+      <p>Conception de pièces destinées à la fabrication additive : épaisseurs de paroi, orientation d'impression, supports, jeux et tolérances d'assemblage selon le procédé. Je livre le modèle (STEP ou STL) prêt à imprimer, pour un prototype, une pièce de série courte ou un gabarit non critique ; l'impression est réalisée par vos soins ou par votre prestataire.</p>
     </article>
 
     <article class="expertise-card reveal">
@@ -1026,11 +1026,11 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 
 <footer>
   <div class="footer-logo"><img src="img/i2ta-conception.webp" alt="I2TA Conception" /></div>
-  <p>© 2026 I2TA Conception — Adrien Tomasini — Ingénierie Mécanique — Marseille — SIREN 978 741 023</p>
+  <p>© 2026 I2TA Conception — Adrien Tomasini — Ingénierie Mécanique — Marseille — SIREN 978 741 023 — <a href="/mentions-legales/" style="color:inherit">Mentions légales</a></p>
 </footer>
 
 <!-- three.js r128 — train planétaire 3D du hero -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="/js/three-r128.min.js"></script>
 <script>
 // ===== Mobile menu =====
 const navBurger = document.getElementById('navBurger');
