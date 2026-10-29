@@ -357,18 +357,20 @@ nav {
 .work-3d img,.work-3d model-viewer{position:absolute;inset:0;width:100%;height:100%;display:block}
 .work-3d img{object-fit:cover}
 .work-3d model-viewer{--poster-color:transparent}
-.work-3d-start{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#07080a;border:0;border-radius:100px;padding:.6rem 1.2rem;font-family:var(--mono);font-size:.76rem;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.work-3d-start{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);z-index:2;display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#07080a;border:0;border-radius:100px;padding:.6rem 1.2rem;font-family:var(--mono);font-size:.76rem;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .work-3d-start:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 8px 24px rgba(91,141,239,.35)}
-.work-3d-start:focus-visible,.work-3d-opt:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}
-.work-3d-status{position:absolute;inset:auto 0 .8rem 0;text-align:center;font-size:.8rem;color:#55524b;pointer-events:none}
-.work-3d-opts{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem 0}
-.work-3d-opt{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg-3);border:1px solid var(--line);color:var(--ink-dim);border-radius:100px;padding:.4rem .9rem;font-family:var(--mono);font-size:.74rem;cursor:pointer;transition:border-color .2s,color .2s}
-.work-3d-opt:hover{color:var(--ink);border-color:rgba(91,141,239,.35)}
-.work-3d-opt[aria-pressed="true"]{border-color:var(--accent);color:var(--ink)}
-.work-3d-opt i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:block}
-.work-3d-opt[hidden],.work-3d-start[hidden]{display:none}
-.work-info .work-3d-link{display:inline-block;margin-top:.8rem;font-family:var(--mono);font-size:.76rem;color:var(--accent-bright);text-decoration:none;border-bottom:1px solid rgba(138,180,255,.35)}
-.work-info .work-3d-link:hover{border-color:var(--accent-bright)}
+.work-3d-status{position:absolute;inset:auto 0 .9rem 0;z-index:2;text-align:center;font-size:.8rem;color:#55524b;pointer-events:none}
+.work-3d-opts{position:absolute;left:50%;bottom:.8rem;transform:translateX(-50%);z-index:2;display:flex;gap:.3rem;padding:.3rem;background:rgba(10,10,12,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:100px}
+.work-3d-opt{display:inline-flex;align-items:center;gap:.4rem;background:transparent;border:1px solid transparent;color:#cfd3dc;border-radius:100px;padding:.32rem .65rem;font-family:var(--mono);font-size:.7rem;cursor:pointer;transition:background .2s,color .2s}
+.work-3d-opt:hover{color:#fff}
+.work-3d-opt[aria-pressed="true"]{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18);color:#fff}
+.work-3d-opt i{width:10px;height:10px;border-radius:50%;display:block}
+.work-3d-opts[hidden],.work-3d-start[hidden]{display:none}
+.work-3d-start:focus-visible,.work-3d-opt:focus-visible,.work-3d-cta:focus-visible,.work-3d-dl:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}
+.work-3d-cta{color:var(--accent-bright);text-decoration:none;white-space:nowrap;border-bottom:1px solid rgba(138,180,255,.35)}
+.work-3d-cta:hover{border-color:var(--accent-bright)}
+.work-3d-dl{position:absolute;top:.7rem;right:.7rem;z-index:2;background:rgba(10,10,12,.78);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:.3rem .7rem;font-family:var(--mono);font-size:.68rem;color:#e6e8ee;text-decoration:none;transition:background .2s}
+.work-3d-dl:hover{background:rgba(10,10,12,.92)}
 
 /* lightbox */
 .lightbox {
@@ -868,18 +870,17 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
       <div class="work-3d" id="work3d">
         <img width="1400" height="1050" src="/img/decapsuleur-vue-3d-glb-cuivre.webp" alt="Décapsuleur en cuivre, aperçu de la vue 3D interactive" loading="lazy" />
         <button type="button" class="work-3d-start" id="work3dStart">Voir en 3D ▸</button>
+        <a class="work-3d-dl" href="/3d/decapsuleur-finitions.glb" download="decapsuleur-demo.glb" title="Télécharger le fichier GLB de démonstration (5 Mo)">Démo GLB ↓</a>
         <div class="work-3d-status" id="work3dStatus" role="status" aria-live="polite"></div>
-      </div>
-      <div class="work-3d-opts" role="group" aria-label="Matière">
-        <button type="button" class="work-3d-opt" data-variant="Cuivre" aria-pressed="true" hidden><i style="background:#c98f78"></i>Cuivre</button>
-        <button type="button" class="work-3d-opt" data-variant="Laiton" aria-pressed="false" hidden><i style="background:#d9b46f"></i>Laiton</button>
-        <button type="button" class="work-3d-opt" data-variant="Aluminium" aria-pressed="false" hidden><i style="background:#cfd3d8"></i>Aluminium</button>
+        <div class="work-3d-opts" role="group" aria-label="Matière" hidden>
+          <button type="button" class="work-3d-opt" data-variant="Cuivre" aria-pressed="true"><i style="background:#c98f78"></i>Cuivre</button>
+          <button type="button" class="work-3d-opt" data-variant="Laiton" aria-pressed="false"><i style="background:#d9b46f"></i>Laiton</button>
+          <button type="button" class="work-3d-opt" data-variant="Aluminium" aria-pressed="false"><i style="background:#cfd3d8"></i>Aluminium</button>
+        </div>
       </div>
       <div class="work-info">
-        <h3>Vue 3D pour boutique en ligne — fichier GLB</h3>
-        <p>Décapsuleur modélisé sous SolidWorks, rendu en 3D temps réel : le visiteur fait tourner la pièce, zoome et change de matière au clic (cuivre, laiton, aluminium). Un seul fichier GLB par produit, intégrable sur votre site de vente ou votre catalogue en ligne.</p>
-        <a class="work-3d-link" href="#contact">Demander une vue 3D de vos produits →</a>
-        <br /><a class="work-3d-link" href="/3d/decapsuleur-finitions.glb" download="decapsuleur-demo.glb">Télécharger le fichier GLB de démonstration (5 Mo) ↓</a>
+        <h3>Vue 3D pour boutique en ligne</h3>
+        <p>Rotation, zoom, choix de matière : un fichier GLB par produit. <a class="work-3d-cta" href="#contact">Demander une vue 3D →</a></p>
       </div>
     </article>
 
@@ -1202,6 +1203,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
         stage.querySelector('img')?.remove();
         const av = mv.availableVariants || [];
         opts.forEach(o => { o.hidden = !av.includes(o.dataset.variant); });
+        const grp = stage.querySelector('.work-3d-opts'); if (grp && av.length) grp.hidden = false;
       });
       mv.addEventListener('error', () => { status.textContent = 'Le modèle 3D n’a pas pu se charger. Réessayez.'; btn.hidden = false; started = false; });
       stage.appendChild(mv);
