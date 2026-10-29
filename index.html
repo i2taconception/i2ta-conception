@@ -352,6 +352,24 @@ nav {
 .work-info h3 { font-family: var(--display); font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
 .work-info p { font-size: 0.84rem; color: var(--ink-dim); line-height: 1.6; }
 
+/* vue 3D GLB (réalisation) */
+.work-3d{position:relative;aspect-ratio:4/3;background:linear-gradient(#f4f3f1,#dedbd6);overflow:hidden}
+.work-3d img,.work-3d model-viewer{position:absolute;inset:0;width:100%;height:100%;display:block}
+.work-3d img{object-fit:cover}
+.work-3d model-viewer{--poster-color:transparent}
+.work-3d-start{position:absolute;left:50%;bottom:1rem;transform:translateX(-50%);display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#07080a;border:0;border-radius:100px;padding:.6rem 1.2rem;font-family:var(--mono);font-size:.76rem;font-weight:600;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.work-3d-start:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 8px 24px rgba(91,141,239,.35)}
+.work-3d-start:focus-visible,.work-3d-opt:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}
+.work-3d-status{position:absolute;inset:auto 0 .8rem 0;text-align:center;font-size:.8rem;color:#55524b;pointer-events:none}
+.work-3d-opts{display:flex;flex-wrap:wrap;gap:.5rem;padding:1rem 1.5rem 0}
+.work-3d-opt{display:inline-flex;align-items:center;gap:.5rem;background:var(--bg-3);border:1px solid var(--line);color:var(--ink-dim);border-radius:100px;padding:.4rem .9rem;font-family:var(--mono);font-size:.74rem;cursor:pointer;transition:border-color .2s,color .2s}
+.work-3d-opt:hover{color:var(--ink);border-color:rgba(91,141,239,.35)}
+.work-3d-opt[aria-pressed="true"]{border-color:var(--accent);color:var(--ink)}
+.work-3d-opt i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:block}
+.work-3d-opt[hidden],.work-3d-start[hidden]{display:none}
+.work-info .work-3d-link{display:inline-block;margin-top:.8rem;font-family:var(--mono);font-size:.76rem;color:var(--accent-bright);text-decoration:none;border-bottom:1px solid rgba(138,180,255,.35)}
+.work-info .work-3d-link:hover{border-color:var(--accent-bright)}
+
 /* lightbox */
 .lightbox {
   display: none; position: fixed; inset: 0; z-index: 300;
@@ -846,6 +864,25 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
       </div>
     </article>
 
+    <article class="work-card reveal" data-cat="render">
+      <div class="work-3d" id="work3d">
+        <img width="1400" height="1050" src="/img/decapsuleur-vue-3d-glb-cuivre.webp" alt="Décapsuleur en cuivre, aperçu de la vue 3D interactive" loading="lazy" />
+        <button type="button" class="work-3d-start" id="work3dStart">Voir en 3D ▸</button>
+        <div class="work-3d-status" id="work3dStatus" role="status" aria-live="polite"></div>
+      </div>
+      <div class="work-3d-opts" role="group" aria-label="Matière">
+        <button type="button" class="work-3d-opt" data-variant="Cuivre" aria-pressed="true" hidden><i style="background:#c98f78"></i>Cuivre</button>
+        <button type="button" class="work-3d-opt" data-variant="Laiton" aria-pressed="false" hidden><i style="background:#d9b46f"></i>Laiton</button>
+        <button type="button" class="work-3d-opt" data-variant="Aluminium" aria-pressed="false" hidden><i style="background:#cfd3d8"></i>Aluminium</button>
+      </div>
+      <div class="work-info">
+        <h3>Vue 3D pour boutique en ligne — fichier GLB</h3>
+        <p>Décapsuleur modélisé sous SolidWorks, rendu en 3D temps réel : le visiteur fait tourner la pièce, zoome et change de matière au clic (cuivre, laiton, aluminium). Un seul fichier GLB par produit, intégrable sur votre site de vente ou votre catalogue en ligne.</p>
+        <a class="work-3d-link" href="#contact">Demander une vue 3D de vos produits →</a>
+        <br /><a class="work-3d-link" href="/3d/decapsuleur-finitions.glb" download="decapsuleur-demo.glb">Télécharger le fichier GLB de démonstration (5 Mo) ↓</a>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -1135,6 +1172,45 @@ function closeLightbox() { lightbox.classList.remove('open'); lightboxImg.src = 
 lightboxClose.addEventListener('click', closeLightbox);
 lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+// ===== Vue 3D GLB (chargée au clic : model-viewer + modèle ≈ 5 Mo) =====
+(function () {
+  const stage = document.getElementById('work3d'); if (!stage) return;
+  const btn = document.getElementById('work3dStart'), status = document.getElementById('work3dStatus');
+  const opts = [...document.querySelectorAll('.work-3d-opt')];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let started = false;
+  btn.addEventListener('click', async () => {
+    if (started) return; started = true;
+    btn.hidden = true; status.textContent = 'Chargement du modèle 3D…';
+    try {
+      await import('/3d/model-viewer.min.js');
+      const mv = document.createElement('model-viewer');
+      mv.setAttribute('src', '/3d/decapsuleur-finitions.glb');
+      mv.setAttribute('alt', 'Décapsuleur en 3D, modèle interactif (cuivre, laiton, aluminium)');
+      ['camera-controls','interaction-prompt=none'].forEach(a => { const [k,v] = a.split('='); mv.setAttribute(k, v || ''); });
+      mv.setAttribute('touch-action', 'pan-y');
+      mv.setAttribute('camera-orbit', '30deg 65deg auto'); mv.setAttribute('field-of-view', '19deg');
+      mv.setAttribute('min-field-of-view', '8deg'); mv.setAttribute('max-field-of-view', '35deg');
+      mv.setAttribute('environment-image', 'neutral'); mv.setAttribute('exposure', '1.1'); mv.setAttribute('tone-mapping', 'aces');
+      mv.setAttribute('shadow-intensity', '1'); mv.setAttribute('shadow-softness', '1');
+      if (!reduce) { mv.setAttribute('auto-rotate', ''); mv.setAttribute('auto-rotate-delay', '2000'); }
+      mv.setAttribute('variant-name', 'Cuivre');
+      mv.addEventListener('load', () => {
+        status.textContent = '';
+        stage.querySelector('img')?.remove();
+        const av = mv.availableVariants || [];
+        opts.forEach(o => { o.hidden = !av.includes(o.dataset.variant); });
+      });
+      mv.addEventListener('error', () => { status.textContent = 'Le modèle 3D n’a pas pu se charger. Réessayez.'; btn.hidden = false; started = false; });
+      stage.appendChild(mv);
+      opts.forEach(o => o.addEventListener('click', () => {
+        mv.variantName = o.dataset.variant;
+        opts.forEach(x => x.setAttribute('aria-pressed', x === o));
+      }));
+    } catch (e) { status.textContent = 'Le modèle 3D n’a pas pu se charger. Réessayez.'; btn.hidden = false; started = false; }
+  });
+})();
 
 // ===== Hero : train planétaire 3D (WebGL, three.js r128) =====
 // Décoratif : fond transparent, canvas en pointer-events:none, ne bloque pas le scroll.
