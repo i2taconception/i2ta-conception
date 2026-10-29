@@ -1167,7 +1167,8 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
       mv.setAttribute('alt', 'Bottle opener in 3D, interactive model (copper, brass, aluminium)');
       ['camera-controls','interaction-prompt=none'].forEach(a => { const [k,v] = a.split('='); mv.setAttribute(k, v || ''); });
       mv.setAttribute('touch-action', 'pan-y');
-      mv.setAttribute('camera-orbit', '30deg 65deg auto'); mv.setAttribute('field-of-view', '19deg');
+      mv.setAttribute('orientation', '180deg 0deg 0deg');
+      mv.setAttribute('camera-orbit', '205deg 72deg auto'); mv.setAttribute('field-of-view', '16deg');
       mv.setAttribute('min-field-of-view', '8deg'); mv.setAttribute('max-field-of-view', '35deg');
       mv.setAttribute('environment-image', 'neutral'); mv.setAttribute('exposure', '1.1'); mv.setAttribute('tone-mapping', 'aces');
       mv.setAttribute('shadow-intensity', '1'); mv.setAttribute('shadow-softness', '1');
