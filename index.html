@@ -1219,7 +1219,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 // ===== Hero : train planétaire 3D (WebGL, three.js r128) =====
 // Décoratif : fond transparent, canvas en pointer-events:none, ne bloque pas le scroll.
 // Cinématique exacte (engrènement verrouillé) + denture en développante vérifiée en 2D.
-(function () {
+window.addEventListener('DOMContentLoaded', function () {  // three.js est chargé en defer : attendre la fin du parsing
   const stage = document.getElementById('heroGear');
   if (!stage || typeof THREE === 'undefined') return;
 
@@ -1441,7 +1441,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   }
   applyCam();
   requestAnimationFrame(tick);
-})();
+});
 
 
 // ===== Nav background on scroll =====
