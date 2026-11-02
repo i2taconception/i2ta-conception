@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mechanical Design Office &amp; SolidWorks Engineering — I2TA France</title>
+<title>Mechanical Design Office &amp; SolidWorks Engineering — I2TA Conception, France</title>
 <meta name="description" content="Mechanical design office in Marseille, France: SolidWorks engineering, toleranced drawings (GD&T), DFM optimization and 3D reverse engineering (STL/STEP)." />
 <meta name="keywords" content="reverse engineering, STL to STEP, mesh to solid CAD, 3D scan to CAD, point cloud to STEP, mechanical engineering, design office, SolidWorks, GD&T, tolerancing, industrial tooling, Marseille, France, machining, mechanical design, 3D product viewer, GLB file, e-commerce 3D" />
 <meta name="author" content="Adrien Tomasini - I2TA Conception" />
@@ -647,7 +647,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
         <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="1" stroke="currentColor" stroke-width="1.4"/><path d="M4 12h24M12 28V12" stroke="currentColor" stroke-width="1.4"/></svg>
       </div>
       <h3>Drawings &amp; Documentation</h3>
-      <p>ISO-standard manufacturing drawings, GD&amp;T tolerancing, bills of materials — ready for your suppliers.</p>
+      <p>ISO-standard manufacturing drawings, GD&amp;T tolerancing, bills of materials — ready for your suppliers. Your 2D drawings can be taken over and modeled in 3D.</p>
     </article>
 
     <article class="service-card reveal">
@@ -677,6 +677,13 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
       <p>3D scan, point cloud or existing part → rebuilt into a usable STEP model for manufacturing or redesign.</p>
     </article>
   </div>
+
+  <div class="process reveal" style="margin-top:1.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;">
+    <div><span style="font-family:var(--mono);font-size:0.75rem;color:var(--accent-bright);">01 · You send the brief</span><p style="color:var(--ink-dim);font-size:0.92rem;margin:0.4rem 0 0;">2D drawing, STEP, STL, sketch or a simple description, by email or form.</p></div>
+    <div><span style="font-family:var(--mono);font-size:0.75rem;color:var(--accent-bright);">02 · Feasibility feedback</span><p style="color:var(--ink-dim);font-size:0.92rem;margin:0.4rem 0 0;">I tell you quickly whether it's feasible, within 24 working hours.</p></div>
+    <div><span style="font-family:var(--mono);font-size:0.75rem;color:var(--accent-bright);">03 · Estimate and deliverables</span><p style="color:var(--ink-dim);font-size:0.92rem;margin:0.4rem 0 0;">Hours-based estimate, deliverables and lead time agreed before any work starts.</p></div>
+  </div>
+  <p class="reveal" style="color:var(--ink-dim);font-size:0.92rem;margin-top:1.2rem;">Any trade: machining, boilermaking, sheet metal, welding, laser cutting, design for 3D printing.</p>
 </section>
 
 <!-- WORK / PORTFOLIO -->
@@ -901,7 +908,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
       <div class="eyebrow">03 — About</div>
       <h2>Why trust me with your drawing</h2>
       <p class="trust-intro">
-        A young company, but ten years of industrial experience that directly benefit your project — not a promise, a track record.
+        A recent independent company, but ten years of machining and automotive design behind every drawing: industrial experience that directly benefits your project — not a promise, a track record.
       </p>
 
       <div class="trust-points">
@@ -1195,7 +1202,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
 // ===== Hero : train planétaire 3D (WebGL, three.js r128) =====
 // Décoratif : fond transparent, canvas en pointer-events:none, ne bloque pas le scroll.
 // Cinématique exacte (engrènement verrouillé) + denture en développante vérifiée en 2D.
-(function () {
+window.addEventListener('DOMContentLoaded', function () {  // three.js est chargé en defer : attendre la fin du parsing
   const stage = document.getElementById('heroGear');
   if (!stage || typeof THREE === 'undefined') return;
 
@@ -1417,7 +1424,7 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLight
   }
   applyCam();
   requestAnimationFrame(tick);
-})();
+});
 
 
 // ===== Nav background on scroll =====
