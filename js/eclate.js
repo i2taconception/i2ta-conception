@@ -19,6 +19,7 @@
   var rail = root.querySelector('.xp-rail');
   var railBars = rail ? Array.prototype.slice.call(rail.querySelectorAll('i')) : [];
   var endEl = root.querySelector('.xp-end');
+  var chapterBox = root.querySelector('.xp-chapters');
   var finePointer = window.matchMedia('(pointer: fine)').matches;
 
   /* ---------- Géométrie des engrenages ---------- */
@@ -339,12 +340,25 @@
   var CH0 = 0.22, CH1 = 0.86, NCH = chapters.length || 5, SEG = (CH1 - CH0) / NCH;
 
   var layout = {};
+  // Zone libre entre deux hauteurs (fractions de l'écran) : le modèle y est centré, sans recouvrir le texte
+  function band(top, bottom, aw) {
+    var r = Math.max(0.16, bottom - top);
+    return { cx: 0, cy: (top + bottom) / 2 - 0.5, aw: aw, ah: r * 0.92 };
+  }
   function computeLayout() {
     var w = stage.clientWidth, h = stage.clientHeight, mobile = w < 820 || w / h < 0.9;
-    layout = mobile
-      ? { hero: { cx: 0, cy: 0.31, aw: 0.84, ah: 0.34 }, ch: { cx: 0, cy: -0.13, aw: 0.92, ah: 0.5 }, end: { cx: 0, cy: 0.08, aw: 0.88, ah: 0.56 } }
-      : { hero: { cx: 0.24, cy: 0.02, aw: 0.5, ah: 0.82 }, ch: { cx: -0.15, cy: 0, aw: 0.54, ah: 0.86 }, end: { cx: 0, cy: -0.1, aw: 0.6, ah: 0.62 } };
+    if (!mobile) {
+      layout = { hero: { cx: 0.24, cy: 0.02, aw: 0.5, ah: 0.82 }, ch: { cx: -0.15, cy: 0, aw: 0.54, ah: 0.86 }, end: { cx: 0, cy: -0.1, aw: 0.6, ah: 0.62 } };
+      return;
+    }
+    // Mobile : on mesure le texte réellement affiché (polices, retours à la ligne, barres du navigateur)
+    var heroBottom = (hero.offsetTop + hero.offsetHeight) / h + 0.03;
+    var chTop = chapterBox ? chapterBox.offsetTop / h - 0.02 : 0.64;
+    var endBottom = endEl ? (endEl.offsetTop + endEl.offsetHeight) / h + 0.04 : 0.3;
+    layout = { hero: band(heroBottom, 0.97, 0.86), ch: band(84 / h, chTop, 0.92), end: band(endBottom, 0.95, 0.88) };
   }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { computeLayout(); });
+  window.addEventListener('load', function () { computeLayout(); });
   function size() {
     var w = stage.clientWidth, h = stage.clientHeight;
     if (!w || !h) return false;
