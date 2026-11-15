@@ -52,13 +52,13 @@ C["fr"] = dict(
     h1="Chaque pièce a une <em>raison d'être.</em>",
     hero_p="Conception SolidWorks, mises en plan GD&amp;T, optimisation DFM et rétro-ingénierie pour les usineurs, chaudronniers et bureaux d'études. Retour de faisabilité sous 24 h ouvrées.",
     cta1="Envoyer un plan", cta2="Voir les réalisations", hint="Faites défiler",
-    poster_alt="Train planétaire en vue éclatée : carter, porte-satellites, couronne, satellites, solaire et flasque",
+    poster_alt="Réducteur planétaire en vue éclatée : vis CHC M10, joint à lèvre, flasque, roulements, arbre solaire, satellites sur douilles à aiguilles, couronne, porte-satellites et carter taraudé",
     chapters=[
-        ("Conception mécanique", "Pièces, assemblages, mécano-soudé et tôlerie, modélisés sous SolidWorks du croquis au modèle prêt pour la production.", "Pièce : porte-satellites"),
-        ("Mises en plan GD&amp;T", "Entraxes, jeux et ajustements cotés au juste nécessaire : le micron là où il compte, la tolérance courante ailleurs.", "Pièce : satellites"),
-        ("Optimisation DFM", "Une géométrie pensée pour le procédé, l'outil et le montage, pour éviter les reprises en atelier.", "Pièce : couronne"),
-        ("Rétro-ingénierie", "Pièce sans plan, scan 3D ou fichier STL reconstruits en solide STEP propre, coté et modifiable.", "Pièce : carter"),
-        ("Conception pour l'impression 3D", "Modèles prêts à imprimer, avec les épaisseurs, les jeux et l'orientation adaptés au procédé.", "Pièce : flasque"),
+        ("Conception mécanique", "Pièces, assemblages, mécano-soudé et tôlerie, modélisés sous SolidWorks du croquis au modèle prêt pour la production.", "Pièces : flasque, vis CHC, joint d'entrée"),
+        ("Mises en plan GD&amp;T", "Entraxes, jeux et ajustements cotés au juste nécessaire : le micron là où il compte, la tolérance courante ailleurs.", "Pièces : arbre solaire, satellites, roulements"),
+        ("Optimisation DFM", "Une géométrie pensée pour le procédé, l'outil et le montage, pour éviter les reprises en atelier.", "Pièces : couronne et goupilles"),
+        ("Rétro-ingénierie", "Pièce sans plan, scan 3D ou fichier STL reconstruits en solide STEP propre, coté et modifiable.", "Pièces : porte-satellites et axes"),
+        ("Conception pour l'impression 3D", "Modèles prêts à imprimer, avec les épaisseurs, les jeux et l'orientation adaptés au procédé.", "Pièces : carter, roulements de sortie, joint"),
     ],
     end="Assemblé. <span>Prêt pour l'atelier.</span>",
     facts=[("10 ans", "d'usinage et de conception automobile"), ("24 h", "ouvrées pour un retour de faisabilité"), ("2", "itérations incluses par défaut dans le devis")],
@@ -174,13 +174,13 @@ C["en"] = dict(
     h1="Every part has a <em>reason to exist.</em>",
     hero_p="SolidWorks design, GD&amp;T drawings, DFM optimization and reverse engineering for machine shops, fabricators and design offices. Feasibility feedback within 24 working hours.",
     cta1="Send a drawing", cta2="View the portfolio", hint="Scroll",
-    poster_alt="Exploded planetary gearbox: housing, planet carrier, ring gear, planet gears, sun gear and cover",
+    poster_alt="Exploded planetary gearbox: M10 cap screws, lip seal, cover, ball bearings, sun shaft, planet gears on needle bearings, ring gear, planet carrier and tapped housing",
     chapters=[
-        ("Mechanical design", "Parts, assemblies, weldments and sheet metal, modeled in SolidWorks from sketch to production-ready model.", "Part: planet carrier"),
-        ("GD&amp;T drawings", "Center distances, clearances and fits dimensioned to what is needed: the micron where it matters, standard tolerances elsewhere.", "Part: planet gears"),
-        ("DFM optimization", "Geometry designed around the process, the tool and the assembly, to avoid rework on the shop floor.", "Part: ring gear"),
-        ("Reverse engineering", "A part with no drawing, a 3D scan or an STL file rebuilt as a clean, dimensioned, editable STEP solid.", "Part: housing"),
-        ("Design for 3D printing", "Print-ready models, with wall thicknesses, clearances and orientation suited to the process.", "Part: cover"),
+        ("Mechanical design", "Parts, assemblies, weldments and sheet metal, modeled in SolidWorks from sketch to production-ready model.", "Parts: cover, cap screws, input seal"),
+        ("GD&amp;T drawings", "Center distances, clearances and fits dimensioned to what is needed: the micron where it matters, standard tolerances elsewhere.", "Parts: sun shaft, planet gears, bearings"),
+        ("DFM optimization", "Geometry designed around the process, the tool and the assembly, to avoid rework on the shop floor.", "Parts: ring gear and dowel pins"),
+        ("Reverse engineering", "A part with no drawing, a 3D scan or an STL file rebuilt as a clean, dimensioned, editable STEP solid.", "Parts: planet carrier and pins"),
+        ("Design for 3D printing", "Print-ready models, with wall thicknesses, clearances and orientation suited to the process.", "Parts: housing, output bearings, seal"),
     ],
     end="Assembled. <span>Ready for the shop floor.</span>",
     facts=[("10 years", "of automotive machining and design"), ("24 h", "working hours for feasibility feedback"), ("2", "revisions included by default in the quote")],
@@ -363,7 +363,7 @@ def page(c):
 <section class="xp" id="top" aria-label="{c['eyebrow']}">
   <div class="xp-stage">
     <div class="xp-canvas"></div>
-    <img class="xp-poster" src="{b}img/vue-eclatee-train-planetaire.webp" width="900" height="1253" alt="{c['poster_alt']}" fetchpriority="high" />
+    <img class="xp-poster" src="{b}img/vue-eclatee-train-planetaire.webp" width="900" height="1667" alt="{c['poster_alt']}" fetchpriority="high" />
     <div class="xp-hero">
       <div class="eyebrow">{c['eyebrow']}</div>
       <h1>{c['h1']}</h1>
