@@ -6,7 +6,7 @@
 <title>Mechanical Design Office &amp; SolidWorks Engineering | I2TA Conception, France</title>
 <meta name="description" content="Mechanical design office in Marseille, France: SolidWorks engineering, toleranced drawings (GD&T), DFM optimization and 3D reverse engineering (STL/STEP)." />
 <meta name="keywords" content="reverse engineering, STL to STEP, mesh to solid CAD, 3D scan to CAD, point cloud to STEP, mechanical engineering, design office, SolidWorks, GD&T, tolerancing, industrial tooling, Marseille, France, machining, mechanical design, 3D product viewer, GLB file, e-commerce 3D" />
-<meta name="author" content="Adrien Tomasini - I2TA Conception" />
+<meta name="author" content="I2TA Conception" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://i2ta-conception.fr/en/" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -40,7 +40,6 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "I2TA Conception",
-  "founder": { "@type": "Person", "name": "Adrien Tomasini" },
   "logo": "https://i2ta-conception.fr/img/i2ta-conception.webp",
   "image": "https://i2ta-conception.fr/img/i2ta-conception.webp",
   "description": "Mechanical engineering design office: 3D modeling, GD&T toleranced drawings, industrial tooling, part optimization and redesign.",
@@ -413,6 +412,14 @@ nav {
 .trust-portrait img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   filter: grayscale(0.08) contrast(1.04);
+}
+.trust-portrait--logo {
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, rgba(138,180,255,0.10), transparent 62%), var(--bg-1);
+}
+.trust-portrait--logo img {
+  width: 70%; height: auto; object-fit: contain; margin-bottom: 16%;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,0.55));
 }
 .trust-portrait::after {
   content: ""; position: absolute; inset: 0;
@@ -891,13 +898,13 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 <section id="trust" class="section">
   <div class="trust-layout">
     <div class="trust-visual reveal">
-      <div class="trust-portrait">
-        <img width="450" height="730" src="../img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, founding engineer of I2TA Conception" loading="lazy" />
+      <div class="trust-portrait trust-portrait--logo">
+        <img width="400" height="400" src="../img/i2ta-conception.webp" alt="I2TA Conception logo, mechanical design office in Marseille, France" loading="lazy" />
         <div class="trust-portrait-bracket tl"></div>
         <div class="trust-portrait-bracket bl"></div>
         <div class="trust-portrait-tag">
           <div>
-            <h4>Adrien Tomasini</h4>
+            <h4>I2TA Conception</h4>
             <p>Materials &amp; Mechanical Engineer</p>
           </div>
         </div>
@@ -1071,7 +1078,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 
 <footer>
   <div class="footer-logo"><img width="220" height="220" src="../img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
-  <p>© 2026 I2TA Conception · Adrien Tomasini · Mechanical Engineering · Marseille, France · SIREN 978 741 023 · <a href="/en/legal-notice/" style="color:inherit">Legal notice</a></p>
+  <p>© 2026 I2TA Conception · Mechanical Engineering · Marseille, France · SIREN 978 741 023 · <a href="/en/legal-notice/" style="color:inherit">Legal notice</a></p>
 </footer>
 
 <!-- three.js r128, train planétaire 3D du hero -->

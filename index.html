@@ -7,7 +7,7 @@
 <title>Bureau d'études mécanique &amp; SolidWorks | I2TA Conception, Marseille</title>
 <meta name="description" content="Bureau d'études mécanique à Marseille : conception SolidWorks, plans cotés GD&T, optimisation DFM, rétro-ingénierie STL/STEP. Réponse rapide sur faisabilité." />
 <meta name="keywords" content="rétro-ingénierie, rétro-conception, reverse engineering mécanique, ingénierie inverse, STL vers STEP, conversion STL STEP, scan 3D pièce mécanique, numérisation 3D, nuage de points, ingénierie mécanique, bureau d'études, SolidWorks, GD&T, tolérancement, outillage industriel, Marseille, Provence, usinage, conception mécanique, vue 3D produit, fichier GLB, 3D e-commerce" />
-<meta name="author" content="Adrien Tomasini - I2TA Conception" />
+<meta name="author" content="I2TA Conception" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://i2ta-conception.fr/" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -41,7 +41,6 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "I2TA Conception",
-  "founder": { "@type": "Person", "name": "Adrien Tomasini" },
   "logo": "https://i2ta-conception.fr/img/i2ta-conception.webp",
   "image": "https://i2ta-conception.fr/img/i2ta-conception.webp",
   "description": "Bureau d'études en ingénierie mécanique à Marseille : modélisation 3D SolidWorks, plans cotés GD&T, outillages industriels, optimisation et redesign de pièces, ainsi que rétro-ingénierie 3D (scan 3D, nuage de points, STL vers STEP paramétrique).",
@@ -427,6 +426,14 @@ nav {
 .trust-portrait img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   filter: grayscale(0.08) contrast(1.04);
+}
+.trust-portrait--logo {
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 50% 40%, rgba(138,180,255,0.10), transparent 62%), var(--bg-1);
+}
+.trust-portrait--logo img {
+  width: 70%; height: auto; object-fit: contain; margin-bottom: 16%;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,0.55));
 }
 .trust-portrait::after {
   content: ""; position: absolute; inset: 0;
@@ -907,13 +914,13 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 <section id="trust" class="section">
   <div class="trust-layout">
     <div class="trust-visual reveal">
-      <div class="trust-portrait">
-        <img width="450" height="730" src="img/adrien-tomasini-ingenieur-fondateur-d-i2ta-conception.webp" alt="Adrien Tomasini, ingénieur fondateur d'I2TA Conception" loading="lazy" />
+      <div class="trust-portrait trust-portrait--logo">
+        <img width="400" height="400" src="img/i2ta-conception.webp" alt="Logo I2TA Conception, bureau d'études mécanique à Marseille" loading="lazy" />
         <div class="trust-portrait-bracket tl"></div>
         <div class="trust-portrait-bracket bl"></div>
         <div class="trust-portrait-tag">
           <div>
-            <h4>Adrien Tomasini</h4>
+            <h4>I2TA Conception</h4>
             <p>Ing. Matériaux &amp; Mécanique</p>
           </div>
         </div>
@@ -1095,7 +1102,7 @@ footer p { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint)
 
 <footer>
   <div class="footer-logo"><img width="220" height="220" src="img/i2ta-conception-220.webp" alt="I2TA Conception" /></div>
-  <p>© 2026 I2TA Conception · Adrien Tomasini · Ingénierie Mécanique · Marseille · SIREN 978 741 023 · <a href="/mentions-legales/" style="color:inherit">Mentions légales</a></p>
+  <p>© 2026 I2TA Conception · Ingénierie Mécanique · Marseille · SIREN 978 741 023 · <a href="/mentions-legales/" style="color:inherit">Mentions légales</a></p>
 </footer>
 
 <!-- three.js r128, train planétaire 3D du hero -->
