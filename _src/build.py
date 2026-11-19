@@ -290,7 +290,7 @@ def page(c):
         "logo": "https://i2ta-conception.fr/img/i2ta-conception.webp", "image": "https://i2ta-conception.fr/img/og-i2ta-conception.jpg",
         "description": c["ld_desc"], "areaServed": c["ld_area"],
         "address": {"@type": "PostalAddress", "addressLocality": "Marseille", "addressRegion": "PACA", "addressCountry": "FR"},
-        "email": "i2ta.conception@gmail.com", "telephone": "+33636570981", "url": c["canonical"],
+        "email": "contact@i2ta-conception.fr", "telephone": "+33636570981", "url": c["canonical"],
         "knowsAbout": ["SolidWorks", "Conception mécanique", "Tolérancement GD&T", "DFM", "Rétro-ingénierie", "Conversion STL vers STEP", "Conception pour l'impression 3D", "Rendu KeyShot", "Vue 3D GLB"],
     }
     o = []
@@ -519,7 +519,7 @@ def page(c):
       <h2>{c['contact_h2']}</h2>
       <p>{c['contact_p']}</p>
       <div class="direct">
-        <a href="mailto:i2ta.conception@gmail.com">i2ta.conception@gmail.com</a>
+        <a href="mailto:contact@i2ta-conception.fr">contact@i2ta-conception.fr</a>
         <a href="tel:+33636570981">{'06&nbsp;36&nbsp;57&nbsp;09&nbsp;81' if c['lang'] == 'fr' else '+33&nbsp;6&nbsp;36&nbsp;57&nbsp;09&nbsp;81'}</a>
         <span>{c['zone']}</span>
       </div>
